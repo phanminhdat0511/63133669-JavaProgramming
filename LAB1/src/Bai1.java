@@ -12,6 +12,7 @@ public class Bai1 {
 		hoTen = scan.nextLine();
 		System.out.print("Nhập điểm: ");
 		diem = scan.nextDouble();
+		scan.close();
 		
 		System.out.printf("%s %f điểm", hoTen, diem);
 
