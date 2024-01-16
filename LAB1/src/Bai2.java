@@ -16,7 +16,9 @@ public class Bai2 {
 		scan.close();
 		
 		System.out.printf("Chu vi hình chữ nhật: %f", (chieuDai + chieuRong)*2);
+		System.out.println();
 		System.out.printf("Diện tích hình chữ nhật: %f", (chieuDai * chieuRong));
+		System.out.println();
 		System.out.printf("Chiều dài của cạnh nhỏ nhất: %f", Math.min(chieuDai, chieuRong));
 	}
 
