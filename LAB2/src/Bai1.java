@@ -18,7 +18,7 @@ public class Bai1 {
 			if(b==0)
 				System.out.println("Phương trình vô số nghiệm");
 			else
-				System.out.println("Phương trình vônghiệm");
+				System.out.println("Phương trình vô nghiệm");
 		}
 		else
 			System.out.printf("Nghiệm của phương trình là: %f", (-b/a));
