@@ -10,6 +10,7 @@ public class Bai1 {
 		
 		System.out.print("Nhập vào một số nguyên: ");
 		a = scan.nextInt();
+		scan.close();
 		
 		for(int i=2; i<a-1; i++) {
 			if(a % i ==0) {
