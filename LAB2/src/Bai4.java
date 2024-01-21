@@ -3,7 +3,18 @@ import java.lang.Math;
 
 public class Bai4 {
 
-	public void giaiPT(double a, double b, double c) {
+	public void giaiPT1(double a, double b) {
+		if(a==0){ 
+			if(b==0)
+				System.out.println("Phương trình vô số nghiệm");
+			else
+				System.out.println("Phương trình vô nghiệm");
+		}
+		else
+			System.out.printf("Nghiệm của phương trình là: %f", (-a/b));
+	}
+	
+	public void giaiPT2(double a, double b, double c) {
 		if(a==0) {
 			if(b==0){
 				if(c==0)
@@ -32,27 +43,48 @@ public class Bai4 {
 	public static void main(String[] args) {
 		Bai4 bai4 = new Bai4();
 		int choose;
+		double a;
+		double b;
+		double c;
+		double soDien;
 		
 		Scanner scan = new Scanner(System.in);
 		
 		do {
-			System.out.println("+----------+\n1.Giải phương trình bậc nhất\n2.Giải phương trình bậc hai\n3.Tính tiền điện\n4.Kết thúc\n+----------+");
+			System.out.println("\n\n\n+----------+\n1.Giải phương trình bậc nhất\n2.Giải phương trình bậc hai\n3.Tính tiền điện\n4.Kết thúc\n+----------+");
 			choose = scan.nextInt();
 			
 			switch(choose) {
+				/*Giải phương trình bậc 1*/
 				case 1:
-					double a;
-					double b;
-					double c;
+					System.out.print("Nhập giá trị a: ");
+					a = scan.nextDouble();
+					System.out.print("Nhập giá trị b: ");
+					b = scan.nextDouble();
+					bai4.giaiPT1(a, b);
+					break;
+					
+				/*Giải phương trình bậc 2*/
+				case 2:
 					System.out.print("Nhập giá trị a: ");
 					a = scan.nextDouble();
 					System.out.print("Nhập giá trị b: ");
 					b = scan.nextDouble();
 					System.out.print("Nhập giá trị c: ");
 					c = scan.nextDouble();
-					bai4.giaiPT(a,b,c);
+					bai4.giaiPT2(a,b,c);
 					break;
+					
+				/*Tính tiền điện*/
+				case 3:
+					System.out.print("Nhập số điện (kw): ");
+					soDien = scan.nextDouble();
+					if(soDien < 50) 
+						System.out.printf("Số tiền điện là: %f", soDien * 1000);
+					else
+						System.out.printf("Số tiền điện là: %f", 50*1000 + (soDien-50)*1200);
 				
+				/*Kết thúc*/
 				case 4:
 					break;
 			}
