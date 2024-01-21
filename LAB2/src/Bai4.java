@@ -3,7 +3,7 @@ import java.lang.Math;
 
 public class Bai4 {
 
-	public void giaiPT1(double a, double b) {
+	public void giaiPTB1(double a, double b) {
 		if(a==0){ 
 			if(b==0)
 				System.out.println("Phương trình vô số nghiệm");
@@ -14,7 +14,7 @@ public class Bai4 {
 			System.out.printf("Nghiệm của phương trình là: %f", (-a/b));
 	}
 	
-	public void giaiPT2(double a, double b, double c) {
+	public void giaiPTB2(double a, double b, double c) {
 		if(a==0) {
 			if(b==0){
 				if(c==0)
@@ -40,6 +40,13 @@ public class Bai4 {
 		}
 	}
 	
+	public void tinhTienDien(double soDien) {
+		if(soDien < 50) 
+			System.out.printf("Số tiền điện là: %f", soDien * 1000);
+		else
+			System.out.printf("Số tiền điện là: %f vnđ", 50*1000 + (soDien-50)*1200);
+	}
+	
 	public static void main(String[] args) {
 		Bai4 bai4 = new Bai4();
 		int choose;
@@ -61,7 +68,7 @@ public class Bai4 {
 					a = scan.nextDouble();
 					System.out.print("Nhập giá trị b: ");
 					b = scan.nextDouble();
-					bai4.giaiPT1(a, b);
+					bai4.giaiPTB1(a, b);
 					break;
 					
 				/*Giải phương trình bậc 2*/
@@ -72,17 +79,14 @@ public class Bai4 {
 					b = scan.nextDouble();
 					System.out.print("Nhập giá trị c: ");
 					c = scan.nextDouble();
-					bai4.giaiPT2(a,b,c);
+					bai4.giaiPTB2(a,b,c);
 					break;
 					
 				/*Tính tiền điện*/
 				case 3:
 					System.out.print("Nhập số điện (kw): ");
 					soDien = scan.nextDouble();
-					if(soDien < 50) 
-						System.out.printf("Số tiền điện là: %f", soDien * 1000);
-					else
-						System.out.printf("Số tiền điện là: %f", 50*1000 + (soDien-50)*1200);
+					bai4.tinhTienDien(soDien);
 				
 				/*Kết thúc*/
 				case 4:
