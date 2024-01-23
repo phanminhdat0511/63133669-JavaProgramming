@@ -3,7 +3,7 @@ import java.lang.Math;
 
 public class Bai3 {
 	
-	public void Nhap(int a[], int n) {
+	public void Nhap(int[] a, int n) {
 		Scanner scan = new Scanner(System.in);
 		for(int i=0; i<n; i++) {
 			System.out.printf("a[%d]: ", i);
@@ -12,13 +12,13 @@ public class Bai3 {
 		scan.close();
 	}
 	
-	public void Xuat(int a[], int n) {
+	public void Xuat(int[] a, int n) {
 		for(int i=0; i<n; i++) {
 			System.out.printf("%3d", a[i]);
 		}
 	}
 	
-	public void Min(int a[], int n) {
+	public void Min(int[] a, int n) {
 		int min = a[0];
 		for(int i=1; i<n; i++) {
 			min = Math.min(min, a[i]);
@@ -26,7 +26,7 @@ public class Bai3 {
 		System.out.printf("\nSố nhỏ nhất trong mảng là: %d", min);
 	}
 	
-	public void Avg(int a[], int n) {
+	public void Avg(int[] a, int n) {
 		double sum=0;
 		int count=0;
 		for(int i=0; i<n; i++) {
