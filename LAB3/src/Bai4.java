@@ -1,51 +1,78 @@
 import java.util.Scanner;
 
 public class Bai4 {
+	private String hoten;
+	private double diem;
 	
-	public void Nhap(String[] hoten, double[] diem, int n) {
+	public String getHoten() {
+		return hoten;
+	}
+
+	public void setHoten(String hoten) {
+		this.hoten = hoten;
+	}
+
+	public double getDiem() {
+		return diem;
+	}
+
+	public void setDiem(double diem) {
+		this.diem = diem;
+	}
+
+	public void Nhap() {
 		Scanner scan = new Scanner(System.in);
-		for(int i=0; i<n; i++) {
-			System.out.printf("\nSinh viên thứ %d:\n", i);
-			System.out.print("\tHọ và tên: ");
-			hoten[i] = scan.next();
-			System.out.print("\tĐiểm: ");
-			diem[i] = scan.nextDouble();
-		}
-		scan.close();
+		
+		System.out.print("\tHọ và tên: ");
+		hoten = scan.next();
+		System.out.print("\tĐiểm: ");
+		diem = scan.nextDouble();
 	}
 	
-	public void Xuat(String[] hoten, double[] diem, int n) {
-		System.out.println("Thông tin của các sinh viên vừa nhập:");
-		for(int i=0; i<n; i++) {
-			if(diem[i] <5) {
-				System.out.printf("%s\t%f\tYếu\n", hoten[i], diem[i]);
+	public void Xuat() {
+			if(diem<5) {
+				System.out.printf("%s\t%f\tYếu", hoten, diem);
 			}
-			else if(diem[i]>=5 && diem[i]<6.5) {
-				System.out.printf("%s\t%f\tTrung bình\n", hoten[i], diem[i]);
+			else if(diem>=5 && diem<6.5) {
+				System.out.printf("%s\t%f\tTrung bình", hoten, diem);
 			}
-			else if(diem[i]>=6.5 && diem[i]<7.5) {
-				System.out.printf("%s\t%f\tKhá\n", hoten[i], diem[i]);
+			else if(diem>=6.5 && diem<7.5) {
+				System.out.printf("%s\t%f\tKhá", hoten, diem);
 			}
-			else if(diem[i]>=7.5 && diem[i]<9) {
-				System.out.printf("%s\t%f\tGiỏi\n", hoten[i], diem[i]);
+			else if(diem>=7.5 && diem<9) {
+				System.out.printf("%s\t%f\tGiỏi", hoten, diem);
 			}
 			else {
-				System.out.printf("%s\t%f\tXuất sắc\n", hoten[i], diem[i]);
+				System.out.printf("%s\t%f\tXuất sắc", hoten, diem);
 			}
-		}
 	}
 
 	public static void main(String[] args) {
-		
-		Bai4 SVList = new Bai4();
 		int n;
 		Scanner scan = new Scanner(System.in);
 		System.out.print("Nhập số lượng sinh viên muốn thêm: ");
 		n = scan.nextInt();
-		double[] diem = new double[n];
-		String[] hoten = new String[n];
-		SVList.Nhap(hoten, diem, n);
-		SVList.Xuat(hoten, diem, n);
+		Bai4[] SVList = new Bai4[n];
+		for(int i=0; i<n; i++) {
+			SVList[i] = new Bai4();
+			System.out.printf("Sinh viên thứ %d: \n", i+1);
+			SVList[i].Nhap();
+		}
+		
+		System.out.println("\nThông tin sinhh viên vừa nhập:");
+		for(int i=0; i<n; i++) {
+			for(int j=0; j<n; j++) {
+				if(SVList[i].getDiem() > SVList[j].getDiem()) {
+					Bai4 t = SVList[i];
+					SVList[i] = SVList[j];
+					SVList[j] = t;
+				}
+			}
+		}
+		for(int i=0; i<n; i++) {
+			SVList[i].Xuat();
+			System.out.println();
+		}
 		scan.close();
 	}
 
