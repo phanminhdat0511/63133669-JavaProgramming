@@ -1,6 +1,8 @@
+package Bai1;
 import java.util.Scanner;
 
 public class Bai1 {
+	
 	private String tenSP;
 	private double donGia;
 	private double giamGia;
@@ -34,6 +36,14 @@ public class Bai1 {
 	public void setGiamGia(double giamGia) {
 		this.giamGia = giamGia;
 	}
+	
+	
+	public Bai1(String tenSP, double donGia, double giamGia) {
+	    this.tenSP = tenSP;
+	    this.donGia = donGia;
+	    this.giamGia = giamGia;
+	}
+
 
 	public void nhap() {
 		Scanner scan = new Scanner(System.in);
@@ -62,7 +72,7 @@ public class Bai1 {
 		
 		Bai1[] SPList = new Bai1[n];
 		for(int i=0; i<n; i++) {
-			SPList[i] = new Bai1();
+			SPList[i] = new Bai1("", 0, 0);
 			System.out.printf("\nSản phẩm thứ %d:\n", i+1);
 			SPList[i].nhap();
 		}
