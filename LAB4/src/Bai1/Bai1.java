@@ -3,40 +3,9 @@ import java.util.Scanner;
 
 public class Bai1 {
 	
-	private String tenSP;
-	private double donGia;
-	private double giamGia;
-	
-	
-	public String getTenSP() {
-		return tenSP;
-	}
-
-
-	public void setTenSP(String tenSP) {
-		this.tenSP = tenSP;
-	}
-
-
-	public double getDonGia() {
-		return donGia;
-	}
-
-
-	public void setDonGia(double donGia) {
-		this.donGia = donGia;
-	}
-
-
-	public double getGiamGia() {
-		return giamGia;
-	}
-
-
-	public void setGiamGia(double giamGia) {
-		this.giamGia = giamGia;
-	}
-	
+	public String tenSP;
+	public double donGia;
+	public double giamGia;
 	
 	public Bai1(String tenSP, double donGia, double giamGia) {
 	    this.tenSP = tenSP;
