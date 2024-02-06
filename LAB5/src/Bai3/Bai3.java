@@ -43,14 +43,45 @@ public class Bai3 {
 		
 		/*2. Xuất thông tin của các sản phẩm với giá giảm dần*/
 		Collections.sort(SPList, (SP1, SP2) -> Double.compare(SP2.getGiaSP(), SP1.getGiaSP()));
-		System.out.println("Danh sách sản phẩm sau khi sắp xếp theo giá giảm dần:");
+		System.out.println("\nDanh sách sản phẩm sau khi sắp xếp theo giá giảm dần:");
 		int i=0;
         for (Bai3 sp : SPList) {
             System.out.printf("Sản phẩm %d. %s - Giá: %.2f\n", i, sp.getTenSP(), sp.getGiaSP());
             i++;
         }
         
+        /*3. Tìm và xóa thông tin sản phẩm*/
+        String timTen;
+        System.out.print("\nNhập tên sản phẩm muốn xóa: ");
+        timTen = scan.next();
+        boolean find = false;
+        for( i=0; i<SPList.size(); i++) {
+        	Bai3 sp = SPList.get(i);
+        	if (timTen.equals(sp.getTenSP())) {
+                // Nếu trùng, xóa sản phẩm khỏi danh sách và giảm chỉ số i đi 1 để không bỏ qua phần tử tiếp theo
+                SPList.remove(i);
+                find = true;
+                i--;
+            }
+        }
+        if(!find) 
+        	System.out.println("Không tìm thấy sản phẩm!!");
+        
+        System.out.println("Danh sách sản phẩm sau khi xóa: ");
+        i=0;
+        for (Bai3 sp : SPList) {
+            System.out.printf("Sản phẩm %d. %s - Giá: %.2f\n", i, sp.getTenSP(), sp.getGiaSP());
+            i++;
+        }
+        
+        /*4. Tính giá trung bình của các sản phẩm*/
+        double sum=0;
+        int count =0;
+        for(Bai3 sp : SPList) {
+        	sum += sp.getGiaSP();
+        	count++;
+        }
+        System.out.printf("\nGiá trung bình của các sản phẩm: %f", (double)(sum/count));
         
 	}
-
 }
