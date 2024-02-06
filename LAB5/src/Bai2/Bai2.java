@@ -63,8 +63,15 @@ public class Bai2 {
 		System.out.print("\n\nNhập vị trí muốn xóa: ");
 		int addr;
 		addr = scan.nextInt();
-		hoten.remove(addr);
-		System.out.print("\nDanh sách sau khi xóa:");
+		for( i =0; i<hoten.size(); i++) {
+			if(i == addr) {
+				hoten.remove(addr);
+				break;
+			}
+			else if(i>addr)
+				System.out.print("Không tìm thấy!!");
+		}
+		System.out.println("\nDanh sách sau khi xóa:");
 		thutu = 0;
 		for(String output : hoten) {
 			System.out.print(+ thutu + ".");
