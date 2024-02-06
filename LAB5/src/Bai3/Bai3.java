@@ -49,6 +49,8 @@ public class Bai3 {
             System.out.printf("Sản phẩm %d. %s - Giá: %.2f\n", i, sp.getTenSP(), sp.getGiaSP());
             i++;
         }
+        
+        
 	}
 
 }
