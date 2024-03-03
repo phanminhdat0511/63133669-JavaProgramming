@@ -3,8 +3,8 @@ package Bai2;
 public class Bai2 {
 	
 	public abstract class SinhVienPoly {
-	    protected String hoTen;
-	    protected String nganh;
+	    public String hoTen;
+	    public String nganh;
 	    
 	    protected SinhVienPoly(String hoTen, String nganh) {
 			super();
