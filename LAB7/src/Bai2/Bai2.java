@@ -5,13 +5,14 @@ public class Bai2 {
 	public abstract class SinhVienPoly {
 	    protected String hoTen;
 	    protected String nganh;
-
+	    
 	    protected SinhVienPoly(String hoTen, String nganh) {
-	        this.hoTen = hoTen;
-	        this.nganh = nganh;
-	    }
+			super();
+			this.hoTen = hoTen;
+			this.nganh = nganh;
+		}
 
-	    public abstract double getDiem();
+		public abstract double getDiem();
 
 	    public void getHocLuc() {
 	        if (getDiem() < 5)
