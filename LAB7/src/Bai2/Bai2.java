@@ -6,10 +6,9 @@ public class Bai2 {
 	    public String hoTen;
 	    public String nganh;
 	    
-	    protected SinhVienPoly(String hoTen, String nganh) {
+	    protected SinhVienPoly(String HoTen, String Nganh) {
 			super();
-			this.hoTen = hoTen;
-			this.nganh = nganh;
+			this.hoTen = HoTen;
 		}
 
 		public abstract double getDiem();
