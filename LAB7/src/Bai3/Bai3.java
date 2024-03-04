@@ -8,7 +8,7 @@ public class Bai3 {
 		protected double diemCss;
 		protected double diemHtml;
 		
-		public SinhVienIT(String hoTen, String nganh, double diemJava, double diemCss, double diemHtml) {
+		public SinhVienIT(String HoTen, String Nganh, double diemJava, double diemCss, double diemHtml) {
 	        super(hoTen, nganh);
 	        this.diemJava = diemJava;
 	        this.diemCss = diemCss;
@@ -27,8 +27,8 @@ public class Bai3 {
 		protected double diemmarketing;
 		protected double diemsales;
 		
-		public SinhVienBiz(String hoTen, String nganh, double diemMarketing, double diemSales) {
-	        super(hoTen, nganh);
+		public SinhVienBiz(String HoTen,  String Nganh, double diemMarketing, double diemSales) {
+	        super(HoTen, Nganh);
 	        this.diemmarketing = diemMarketing;
 	        this.diemsales = diemSales;
 	    }
