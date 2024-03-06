@@ -7,28 +7,28 @@ public class Bai2 {
 	    public String nganh;
 	    
 	    protected SinhVienPoly(String HoTen, String Nganh) {
-			super();
 			this.hoTen = HoTen;
+			this.nganh = Nganh;
 		}
 
 		public abstract double getDiem();
 
-	    public void getHocLuc() {
+		public String getHocLuc() {
 	        if (getDiem() < 5)
-	            System.out.println("Yếu");
+	            return "Yếu";
 	        else if (getDiem() < 6.6)
-	            System.out.println("Trung bình");
+	            return "Trung bình";
 	        else if (getDiem() < 7.5)
-	            System.out.println("Khá");
+	            return "Khá";
 	        else if (getDiem() < 9)
-	            System.out.println("Giỏi");
+	            return "Giỏi";
 	        else
-	            System.out.println("Xuất sắc");
+	            return "Xuất sắc";
 	    }
 
 	    public void xuat() {
-	        System.out.print(hoTen + nganh + getDiem());
-	        getHocLuc();
+	        System.out.print(hoTen + nganh + getDiem() + getHocLuc());
+	        
 	    }
 	}
 

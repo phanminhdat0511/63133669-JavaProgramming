@@ -9,7 +9,7 @@ public class Bai3 {
 		protected double diemHtml;
 		
 		public SinhVienIT(String HoTen, String Nganh, double diemJava, double diemCss, double diemHtml) {
-	        super(hoTen, nganh);
+	        super(HoTen, Nganh);
 	        this.diemJava = diemJava;
 	        this.diemCss = diemCss;
 	        this.diemHtml = diemHtml;
